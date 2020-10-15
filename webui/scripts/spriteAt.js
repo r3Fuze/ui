@@ -20,17 +20,6 @@ sprites.forEach((sprite) => {
     ) {
       console.log(`${sprite.name}, ${state.name}`)
       console.log(state)
-      console.log("===")
-    }
-
-    if (
-      x > state.x &&
-      x < state.x + state.width &&
-      y > state.y &&
-      y < state.y + state.height
-    ) {
-      console.log(`${sprite.name}, ${state.name}`)
-      console.log(state)
     }
   })
 })

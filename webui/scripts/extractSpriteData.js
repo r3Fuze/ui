@@ -49,5 +49,8 @@ icons.forEach((i) => {
   final.push(icon)
 })
 
-fs.writeFileSync("./sprites.json", JSON.stringify(final, null, min ? 0 : 2))
+fs.writeFileSync(
+  "scripts/sprites.json",
+  JSON.stringify(final, null, min ? 0 : 2)
+)
 console.log("Saved 'sprites.json'")
