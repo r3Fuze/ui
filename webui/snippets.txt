@@ -1,0 +1,16 @@
+const [name, setName] = useState("blank")
+
+<img
+  id="r2"
+  onClick={() => {
+    const img = document.getElementById("r2")
+    setName(`${img.naturalWidth}x${img.naturalHeight}`)
+  }}
+  src="fb://UI/Art/Menu/LevelThumbs/XP4_Quake_thumb"
+  style={{}}
+/>
+<p>{name}</p>
+
+================================
+
+<img id="r" src="fb://UI/Art/Persistence/Weapons/AK74M" />
