@@ -1,8 +1,6 @@
 const fs = require("fs")
 const iconJson = require("./Hud3dIcons.json")
 
-const min = process.argv[2] === "true"
-
 const icons = iconJson.$instances[0].$fields.Icons.$value
 
 const width = 256
@@ -49,8 +47,7 @@ icons.forEach((i) => {
   final.push(icon)
 })
 
-fs.writeFileSync(
-  "scripts/sprites.json",
-  JSON.stringify(final, null, min ? 0 : 2)
-)
+fs.writeFileSync("src/sprites.json", JSON.stringify(final))
+fs.writeFileSync("scripts/sprites.json", JSON.stringify(final, null, 2))
+
 console.log("Saved 'sprites.json'")

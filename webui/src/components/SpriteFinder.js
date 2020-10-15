@@ -40,12 +40,18 @@ export default function SpriteFinder() {
 
     if (icon === undefined) {
       setName("???")
+      setBorderStyle({
+        left: 0,
+        top: 0,
+        width: 0,
+        height: 0,
+      })
       return
     }
 
     setBorderStyle({
-      left: icon.state.x + rect.left,
-      top: icon.state.y + rect.top,
+      left: icon.state.x + rect.left - 1,
+      top: icon.state.y + rect.top - 1,
       width: icon.state.width,
       height: icon.state.height,
     })

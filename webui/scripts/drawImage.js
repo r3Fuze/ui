@@ -20,5 +20,5 @@ async function draw() {
     })
   })
 
-  await fs.writeFile("./image.png", canvas.toBuffer("image/png"))
+  await fs.writeFile("scripts/image.png", canvas.toBuffer("image/png"))
 }
