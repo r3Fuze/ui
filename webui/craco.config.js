@@ -5,7 +5,7 @@ module.exports = {
     plugins: [
       new VextPackPlugin({
         compilerPath: "../../..",
-        hotReloadSupport: true,
+        hotReloadSupport: process.env.NODE_ENV === "development",
       }),
     ],
   },

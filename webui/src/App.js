@@ -1,10 +1,12 @@
 import React from "react"
 import "./App.scss"
 import FBResource from "./components/FBResource"
+import HudIcon from "./components/HudIcon"
+import SpriteFinder from "./components/SpriteFinder"
 import Test from "./components/Test"
 
 // eslint-disable-next-line no-undef
-WebUI.Call("DispatchEventLocal", "EnableMouse")
+// WebUI.Call("DispatchEventLocal", "EnableMouse")
 
 const pixel =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
@@ -86,20 +88,6 @@ function handleClick() {
   log(img.naturalHeight)
 }
 
-function imgToBase64(img) {
-  const canvas = document.getElementById("c")
-  const ctx = canvas.getContext("2d")
-  canvas.width = img.width
-  canvas.height = img.height
-
-  // I think this won't work inside the function from the console
-  img.crossOrigin = "anonymous"
-
-  ctx.drawImage(img, 0, 0)
-
-  return canvas.toDataURL("data:image/png;")
-}
-
 const coords = {
   recon: {
     width: 20,
@@ -142,7 +130,7 @@ function App() {
         <FBResource
           src={"UI/Art/Persistence/Specializations/ExplosiveResist2"}
         /> */}
-      <FBResource src={"UI/Static/Hud3dIconsWin32"} />
+      {/* <FBResource src={"UI/Static/Hud3dIconsWin32"} /> */}
 
       {/* <div
           style={{
@@ -154,7 +142,7 @@ function App() {
           }}
         ></div> */}
 
-      <img
+      {/* <img
         src={pixel}
         style={{
           width: 20,
@@ -164,13 +152,17 @@ function App() {
           backgroundPosition: "-142px -890px",
           // transform: "scale(1.25)",
         }}
-      />
+      /> */}
 
-      <button type="button" onClick={handleClick}>
+      {/* <button type="button" onClick={handleClick}>
         Send
-      </button>
+      </button> */}
+
+      <HudIcon icon="Revive" state="Default" />
 
       {/* <Test /> */}
+
+      <SpriteFinder />
     </div>
   )
 }
