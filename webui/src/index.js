@@ -19,6 +19,8 @@ const stylisPlugin = (ctx, property) => {
   }
 }
 
+Object.defineProperty(stylisPlugin, "name", { value: "stylis-px-to-vh" })
+
 ReactDOM.render(
   <React.StrictMode>
     <StyleSheetManager stylisPlugins={[stylisPlugin]}>
