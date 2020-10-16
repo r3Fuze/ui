@@ -23,7 +23,6 @@ function getIcon(icon, state) {
 
 export default function HudIcon({ icon, state }) {
   const i = getIcon(icon, state)
-  console.log(i)
   return (
     <>
       <img

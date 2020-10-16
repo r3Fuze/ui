@@ -1,0 +1,32 @@
+ul {
+  display: flex;
+  
+  & li {
+    height: 50px;
+    width: 250px;
+    background: transparent linear-gradient(180deg, #101010 0%, #262626 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    & p {
+      font-size: 37px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      pointer-events: none; // allow clicking through element
+      user-select: none;
+    }
+
+    &.active {
+      color: black;
+      background: white;
+    }
+
+    &:hover:not(.active) {
+      background: lighten(#101010, 15%);
+    }
+  }
+}
