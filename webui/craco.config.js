@@ -19,12 +19,14 @@ const postcssPlugin = postcss.plugin("postcss-px-to-vh", () => {
 
 module.exports = {
   webpack: {
-    plugins: [
-      new VextPackPlugin({
-        compilerPath: "../../..",
-        hotReloadSupport: process.env.NODE_ENV === "development",
-      }),
-    ],
+    plugins: process.env.SKIP_VEXT
+      ? []
+      : [
+          new VextPackPlugin({
+            compilerPath: "../../..",
+            hotReloadSupport: process.env.NODE_ENV === "development",
+          }),
+        ],
   },
   style: {
     postcss: {
