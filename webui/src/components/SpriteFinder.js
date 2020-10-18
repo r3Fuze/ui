@@ -50,8 +50,8 @@ export default function SpriteFinder() {
     }
 
     setBorderStyle({
-      left: icon.state.x + rect.left - 1,
-      top: icon.state.y + rect.top - 1,
+      left: icon.state.x + rect.left - 1 + window.scrollX,
+      top: icon.state.y + rect.top - 1 + window.scrollY,
       width: icon.state.width,
       height: icon.state.height,
     })
@@ -60,13 +60,19 @@ export default function SpriteFinder() {
       `${icon.sprite.name.replace("UIHudIcon_", "")}, ${icon.state.name.replace(
         "UIIconState_",
         ""
-      )}`
+      )} (${icon.state.width}x${icon.state.height})`
     )
   }
 
   return (
     <>
-      <p>{name}</p>
+      <p
+        style={{
+          color: "white",
+        }}
+      >
+        {name}
+      </p>
       <div
         id="border"
         style={{

@@ -1,20 +1,24 @@
-ul {
-  display: flex;
+@import "../../styles/variables";
+
+ul.nav {
+  display: grid;
+  grid-auto-flow: column;
+  height: 50px;
+  width: 250px * 3;
+  margin-bottom: 10px;
   
   & li {
-    height: 50px;
-    width: 250px;
-    background: transparent linear-gradient(180deg, #101010 0%, #262626 100%) 0% 0% no-repeat padding-box;
+    background: $black-gradient;
     border: 1px solid white;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     
     & p {
-      font-size: 37px;
-      margin-bottom: 6px;
+      font-size: 28px;
+      line-height: 37px;
+      margin-bottom: 3px;
       text-transform: uppercase;
       pointer-events: none; // allow clicking through element
       user-select: none;
