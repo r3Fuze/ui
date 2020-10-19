@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { StyleSheetManager } from "styled-components"
-import Menu from "./components/Menu"
+import SpriteFinder from "./components/SpriteFinder"
 import "reset-css"
 import "./index.scss"
 
@@ -24,7 +24,7 @@ Object.defineProperty(stylisPlugin, "name", { value: "stylis-px-to-vh" })
 ReactDOM.render(
   <React.StrictMode>
     <StyleSheetManager stylisPlugins={[stylisPlugin]}>
-      <Menu />
+      <SpriteFinder />
     </StyleSheetManager>
   </React.StrictMode>,
   document.getElementById("root")

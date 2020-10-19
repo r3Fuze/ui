@@ -65,7 +65,7 @@ export default function SpriteFinder() {
   }
 
   return (
-    <>
+    <div className="sprite-finder">
       <p
         style={{
           color: "white",
@@ -88,6 +88,6 @@ export default function SpriteFinder() {
           border: "none",
         }}
       />
-    </>
+    </div>
   )
 }
