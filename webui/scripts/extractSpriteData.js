@@ -14,7 +14,7 @@ icons.forEach((i) => {
   }
 
   let icon = {
-    name: i.IconType.$enumValue,
+    name: i.IconType.$enumValue.replace("ICon", "Icon"),
     states: [],
   }
 
