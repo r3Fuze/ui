@@ -2,8 +2,9 @@ import React from "react"
 import { cnb } from "cnbuilder"
 import Nav from "../common/Nav"
 import HudIcon from "../HudIcon"
-import logClient from "../../util/log"
 import "./DeployScreen.scss"
+import recon from "../../assets/recon.svg"
+import vext from "../../util/vext"
 
 const deployPoints = [
   {
@@ -66,14 +67,39 @@ const deployPoints = [
 ]
 
 export default function DeployScreen() {
+  vext.BringToFront()
+  vext.Log("hi!")
+  vext.Log(deployPoints)
+
   return (
     <>
       <Nav />
+      <img
+        src={recon}
+        style={{
+          height: 42,
+          width: 42,
+          imageRendering: "crisp-edges",
+          filter: "drop-shadow(0 0 10px #95FF2B)",
+        }}
+      />
+      <HudIcon id="ic" icon="KitRecon" state="Squad" />
       <div className="left">
         <div className="header">
           <p>Deploy Points</p>
         </div>
         <ul className="deploy-points">
+          <li
+            className={cnb("deploy-point", {
+              squad: true,
+            })}
+          >
+            <div className="icon">
+              <img className="custom-icon" src={recon} />
+              <p className="letter">""</p>
+            </div>
+            <p className="name">Squad 00</p>
+          </li>
           {deployPoints.map((point) => (
             <li
               key={`p-${point.name}`}

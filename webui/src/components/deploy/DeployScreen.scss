@@ -39,7 +39,7 @@
     grid-template-columns: 42px 1fr;
 
     &.squad {
-      color: #89D232;
+      color: $squad-green;
 
       & .icon {
         background: linear-gradient(135deg, #89D232 0%, #4F7B1B 100%);
@@ -62,9 +62,13 @@
       & .letter {
         font-size: 32px;
         line-height: 43px;
-        // margin-bottom: 3px;
         transform: translateY(-3px);
       }
     }
   }
+}
+
+.custom-icon {
+  height: 42px;
+  // filter: drop-shadow(0 0 10px #95FF2B);
 }

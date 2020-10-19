@@ -7,9 +7,18 @@ import "./index.scss"
 
 if (!window.WebUI) {
   document.body.classList.add("browser")
+  window.WebUI = {
+    Call(event) {
+      if (!event.includes("DispatchEvent")) {
+        console.log("WebUI.Call():", event)
+      }
+
+      return true
+    },
+  }
 }
 
-// Replace px with vh
+// Replace px with vh in styled-components
 const stylisPlugin = (ctx, property) => {
   if (ctx === 2) {
     return property.replace(
