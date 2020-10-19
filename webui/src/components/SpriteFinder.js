@@ -57,7 +57,7 @@ export default function SpriteFinder() {
     })
 
     setName(
-      `${icon.sprite.name.replace("UIHudIcon_", "")}, ${icon.state.name.replace(
+      `${icon.sprite.name.replace("UIHudIcon_", "")}_${icon.state.name.replace(
         "UIIconState_",
         ""
       )} (${icon.state.width}x${icon.state.height})`

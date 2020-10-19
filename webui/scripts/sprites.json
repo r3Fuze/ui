@@ -275,7 +275,7 @@
     ]
   },
   {
-    "name": "UIHudICon_UAV",
+    "name": "UIHudIcon_UAV",
     "states": [
       {
         "name": "UIIconState_Default",
