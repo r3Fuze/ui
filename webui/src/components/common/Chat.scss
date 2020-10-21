@@ -1,0 +1,65 @@
+@import "../../styles/_variables.scss";
+
+.chat-container {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  display: grid;
+  grid-template-rows: 1fr 30px;
+  gap: 2px;
+  position: absolute;
+  bottom: 50px; // TODO: Ew
+  width: 675px;
+  font-size: 18px;
+  line-height: 25px;
+  height: 268px + 2px + 30px; // 268: messages, 2: gap, 30: input
+
+  & .messages {
+    color: white;
+    padding-left: 5px;
+    height: 268px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    user-select: text;
+
+    & .chat-message p {
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      gap: 0 5px;
+    }
+
+    & .chat-target {
+      color: white;
+    }
+
+    & .target-squad {
+      color: $squad-green;
+    }
+
+    & .target-team {
+      color: $friendly-blue;
+    }
+  }
+
+  & .input {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 5px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+
+    & input {
+      font-family: bffont;
+      font-size: 18px;
+      color: white;
+      display: inline-block;
+      background: none;
+      border: none;
+      outline: none;
+      padding-top: 0;
+      padding-bottom: 6px;
+    }
+  }
+}

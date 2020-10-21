@@ -53,6 +53,8 @@
     & .icon {
       background: linear-gradient(135deg, #3FA3E3 0%, #143E58 100%);
       text-align: center;
+      width: 42px;
+      height: 42px;
 
       & .hud-icon {
         transform: scale(2.5);
@@ -70,5 +72,7 @@
 
 .custom-icon {
   height: 42px;
+  width: 42px;
+  transform: scale(1.25);
   // filter: drop-shadow(0 0 10px #95FF2B);
 }

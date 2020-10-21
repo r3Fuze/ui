@@ -5,6 +5,7 @@ import HudIcon from "../HudIcon"
 import "./DeployScreen.scss"
 import recon from "../../assets/recon.svg"
 import vext from "../../util/vext"
+import Chat from "../common/Chat"
 
 const deployPoints = [
   {
@@ -70,20 +71,11 @@ export default function DeployScreen() {
   vext.BringToFront()
   vext.Log("hi!")
   vext.Log(deployPoints)
+  // vext.EnableKeyboard()
 
   return (
     <>
       <Nav />
-      <img
-        src={recon}
-        style={{
-          height: 42,
-          width: 42,
-          imageRendering: "crisp-edges",
-          filter: "drop-shadow(0 0 10px #95FF2B)",
-        }}
-      />
-      <HudIcon id="ic" icon="KitRecon" state="Squad" />
       <div className="left">
         <div className="header">
           <p>Deploy Points</p>
@@ -118,6 +110,7 @@ export default function DeployScreen() {
           ))}
         </ul>
       </div>
+      <Chat />
     </>
   )
 }

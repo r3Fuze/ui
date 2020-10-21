@@ -8,8 +8,10 @@ import "./index.scss"
 if (!window.WebUI) {
   document.body.classList.add("browser")
   window.WebUI = {
-    Call(event) {
-      if (!event.includes("DispatchEvent")) {
+    Call(event, ...data) {
+      if (event.includes("DispatchEvent")) {
+        console.log("WebUI.Call():", event, data)
+      } else {
         console.log("WebUI.Call():", event)
       }
 
