@@ -35,10 +35,6 @@ const deployPoints = [
   {
     name: "RU DEPLOYMENT",
     squad: false,
-    icon: {
-      name: "KitSupport",
-      state: "Default",
-    },
   },
   {
     name: "ALPHA",
@@ -65,12 +61,14 @@ const deployPoints = [
     squad: false,
     letter: "E",
   },
+  {
+    name: "FOXTROT",
+    squad: false,
+    letter: "F",
+  },
 ]
 
 export default function DeployScreen() {
-  vext.BringToFront()
-  vext.Log("hi!")
-  vext.Log(deployPoints)
   // vext.EnableKeyboard()
 
   return (

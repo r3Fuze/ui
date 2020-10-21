@@ -62,6 +62,8 @@ export default function Chat() {
     )
 
     setInput("")
+
+    // wait for DOM update
     setImmediate(() => {
       if (isAtBottom) {
         msgList.scrollTop = msgList.scrollHeight

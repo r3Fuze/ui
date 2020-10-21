@@ -7,8 +7,9 @@
   display: grid;
   grid-template-rows: 1fr 30px;
   gap: 2px;
+  // align-self: end;
   position: absolute;
-  bottom: 50px; // TODO: Ew
+  bottom: $container-margin; // TODO: Replace with grid
   width: 675px;
   font-size: 18px;
   line-height: 25px;
@@ -31,6 +32,7 @@
 
     & .chat-target {
       color: white;
+      // font-weight: bold;
     }
 
     & .target-squad {

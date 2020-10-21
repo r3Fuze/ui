@@ -89,8 +89,20 @@ Hooks:Install("UI:PushScreen", 999, function(hook, screen, graphPriority, parent
   local screen = UIGraphAsset(screen)
 
   if screen.name == "UI/Flow/Screen/SpawnScreenPC" then
+    
+    for i, node in pairs(screen.nodes) do
+      if node.instanceGuid == Guid("C2B510F1-62A1-4E04-B434-EEAA942626F8") then
+        print("found OverviewMap")
+        if node:Is("WidgetNode") then
+          local widget = WidgetNode(node)
+
+          print(widget)
+        end
+      end
+    end
+
     if not isInit then
-      WebUI:Init()
+      WebUI:Init() -- TODO: ENABLE
       isInit = true
     end
     return

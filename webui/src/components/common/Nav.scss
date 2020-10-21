@@ -21,7 +21,6 @@ ul.nav {
       margin-bottom: 3px;
       text-transform: uppercase;
       pointer-events: none; // allow clicking through element
-      user-select: none;
     }
 
     &.active {

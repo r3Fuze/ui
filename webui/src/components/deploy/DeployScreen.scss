@@ -1,7 +1,10 @@
 @import "../../styles/variables";
 
 .left {
-  width: 675px; // TODO: Flexbox
+  width: 675px;
+  // display: grid;
+  // grid-template-rows: auto 1fr 1fr;
+  // gap: 2px;
 
   & .header {
     color: white;
