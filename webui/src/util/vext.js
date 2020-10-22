@@ -1,36 +1,36 @@
 export default {
   BringToFront() {
-    return WebUI.Call("BringToFront")
+    return window.WebUI.Call("BringToFront")
   },
   SendToBack() {
-    return WebUI.Call("SendToBack")
+    return window.WebUI.Call("SendToBack")
   },
   EnableKeyboard() {
-    return WebUI.Call("EnableKeyboard")
+    return window.WebUI.Call("EnableKeyboard")
   },
   DisableKeyboard() {
-    return WebUI.Call("DisableKeyboard")
+    return window.WebUI.Call("DisableKeyboard")
   },
   ResetKeyboard() {
-    return WebUI.Call("ResetKeyboard")
+    return window.WebUI.Call("ResetKeyboard")
   },
   EnableMouse() {
-    return WebUI.Call("EnableMouse")
+    return window.WebUI.Call("EnableMouse")
   },
   DisableMouse() {
-    return WebUI.Call("DisableMouse")
+    return window.WebUI.Call("DisableMouse")
   },
   Show() {
-    return WebUI.Call("Show")
+    return window.WebUI.Call("Show")
   },
   Hide() {
-    return WebUI.Call("Hide")
+    return window.WebUI.Call("Hide")
   },
   DispatchEvent(event, data) {
-    return WebUI.Call("DispatchEvent", event, data)
+    return window.WebUI.Call("DispatchEvent", event, data)
   },
   DispatchEventLocal(event, data) {
-    return WebUI.Call("DispatchEventLocal", event, data)
+    return window.WebUI.Call("DispatchEventLocal", event, data)
   },
   Log(data) {
     console.log("WebUI.Log():", data)
