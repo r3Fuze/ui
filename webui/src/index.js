@@ -5,7 +5,9 @@ import Menu from "./components/Menu"
 import "reset-css"
 import "./index.scss"
 
-if (!window.WebUI) {
+window.debug = typeof window.WebUI === "undefined"
+
+if (window.debug) {
   document.body.classList.add("browser")
   window.WebUI = {
     Call(event, ...data) {

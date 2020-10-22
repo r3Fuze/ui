@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { cnb } from "cnbuilder"
+import Pusher from "pusher-js"
 import "./Chat.scss"
 import vext from "../../util/vext"
 
-let messages = [
+let messagesPlaceholder = [
   {
     author: "Player 01",
     content: "This was a good game",
@@ -31,9 +32,31 @@ let messages = [
   },
 ]
 
+Pusher.logToConsole = true
+
+const pusher = new Pusher("59912fb7e683d0fbaa19", {
+  cluster: "eu",
+})
+
+const channel = pusher.subscribe("bf3-chat")
+
 export default function Chat() {
   const [input, setInput] = useState("")
+  const [messages, setMessages] = useState(messagesPlaceholder)
   const msgList = document.querySelector(".messages")
+
+  useEffect(() => {
+    channel.bind("message", (data) => {
+      console.log(data)
+      setMessages((old) => [
+        ...old,
+        {
+          target: ["all", "team", "squad"][Math.round(Math.random() * 2)],
+          ...data,
+        },
+      ])
+    })
+  }, [])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -47,10 +70,23 @@ export default function Chat() {
       msgList.clientHeight
     )
 
-    messages.push({
-      author: `Player ${Math.round(Math.random() * 100)}`,
-      content: input,
-      target: ["all", "team", "squad"][Math.round(Math.random() * 2)],
+    const author = `Player ${Math.round(Math.random() * 100)}`
+
+    // messages.push({
+    //   author,
+    //   content: input,
+    //   target: ["all", "team", "squad"][Math.round(Math.random() * 2)],
+    // })
+
+    fetch("/api/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        author,
+        content: input,
+      }),
     })
 
     vext.DispatchEventLocal(
