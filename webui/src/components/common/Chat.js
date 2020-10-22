@@ -72,11 +72,14 @@ export default function Chat() {
 
     const author = `Player ${Math.round(Math.random() * 100)}`
 
-    // messages.push({
-    //   author,
-    //   content: input,
-    //   target: ["all", "team", "squad"][Math.round(Math.random() * 2)],
-    // })
+    // setMessages((old) => [
+    //   ...old,
+    //   {
+    //     author,
+    //     content: input,
+    //     target: ["all", "team", "squad"][Math.round(Math.random() * 2)],
+    //   },
+    // ])
 
     fetch("/api/send-message", {
       method: "POST",
