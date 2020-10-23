@@ -4,9 +4,8 @@ const pusher = new Pusher({
   appId: "1095508",
   key: "59912fb7e683d0fbaa19",
   secret: process.env.PUSHER_SECRET,
-  cluster: "eu"
+  cluster: "eu",
 })
-
 
 module.exports = async (req, res) => {
   const { author, content } = req.body

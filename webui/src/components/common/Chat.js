@@ -42,6 +42,7 @@ const channel = pusher.subscribe("bf3-chat")
 
 export default function Chat() {
   const [input, setInput] = useState("")
+  const [name, setName] = useState(`Player ${Math.round(Math.random() * 100)}`)
   const [messages, setMessages] = useState(messagesPlaceholder)
   const msgList = document.querySelector(".messages")
 
@@ -65,6 +66,12 @@ export default function Chat() {
       return
     }
 
+    if (input.startsWith("/name")) {
+      setName(input.split(" ")[1])
+      setInput("")
+      return
+    }
+
     const isAtBottom = !(
       msgList.scrollHeight - msgList.scrollTop !==
       msgList.clientHeight
@@ -81,13 +88,15 @@ export default function Chat() {
     //   },
     // ])
 
+    console.log(name)
+
     fetch("/api/send-message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        author,
+        author: name,
         content: input,
       }),
     })
